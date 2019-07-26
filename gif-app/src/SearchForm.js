@@ -6,7 +6,7 @@ class SearchForm extends Component{
         return (
             <div className="GifSearchForm">
               <form onSubmit={this.props.apiCall}>
-                <input type="text" name="ZipInput"/>
+                <input type="text" name="Input"/>
                 <input type="submit" value="Search" />
               </form>
             </div>

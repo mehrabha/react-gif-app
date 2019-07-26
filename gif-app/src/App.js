@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from "./Nav.js";
 import SearchForm from "./SearchForm.js";
+import Gifs from "./Gif.js"
 
 class App extends React.Component {
 	constructor() {
@@ -14,7 +15,7 @@ class App extends React.Component {
 
 	async apiCall(e) {
 		e.preventDefault();
-		let searchValue = e.target.elements.ZipInput.value;
+		let searchValue = e.target.elements.Input.value;
 		
 		let link = "http://api.giphy.com/v1/gifs/search?q=" + searchValue + "&api_key=82LALbYxnZQq7yIrJ6TlQ8k7BiOQTt3D";
 
@@ -40,6 +41,7 @@ class App extends React.Component {
 			<div className="app-container">
 			  <Nav />
 			  <SearchForm apiCall={this.apiCall}/>
+
 			</div>
 		);
 	}
