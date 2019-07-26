@@ -48,7 +48,7 @@ class App extends React.Component {
 			  {this.state.loaded === false ? <p>Gif Not Found</p> : <span></span>}
 			  <div className="resultContainer">
 			  </div>
-			  <SearchForm apiCall={this.apiCall}/>
+			  
 
 			</div>
 		);
