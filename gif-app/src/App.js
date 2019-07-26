@@ -16,7 +16,7 @@ class App extends React.Component {
 		e.preventDefault();
 		let searchValue = e.target.elements.ZipInput.value;
 		
-		let link = "http://api.giphy.com/v1/gifs/search?q=" + searchValue + "api_key=82LALbYxnZQq7yIrJ6TlQ8k7BiOQTt3D";
+		let link = "http://api.giphy.com/v1/gifs/search?q=" + searchValue + "&api_key=82LALbYxnZQq7yIrJ6TlQ8k7BiOQTt3D";
 
 
 		const that = this;
