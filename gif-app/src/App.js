@@ -7,7 +7,8 @@ class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			gifs: []
+			gifs: [],
+			loaded: false
 		}
 		this.apiCall = this.apiCall.bind(this);
 	}
@@ -24,22 +25,28 @@ class App extends React.Component {
 		.then(res => res.json())
 		.then(json => {
 			this.setState( {
-				gifs: json
+				gifs: json,
+				loaded: true
 			})
 		})
 		.catch(function() {
 			that.setState({
-				gifs: []
+				gifs: [],
+				loaded: false
 			})
 		})
-		console.log(this.state.gifs);
 	}
 
 	render() {
 		return (
 			<div className="app-container">
 			  <Nav />
-			  <SearchForm apiCall={this.apiCall}/>
+			  <div className="gifSearchForm">
+			  	<SearchForm apiCall={this.apiCall}/>
+			  </div>
+			  {this.state.loaded === false ? <p>Gif Not Found</p> : <span></span>}
+			  <div className="resultContainer">
+			  </div>
 			</div>
 		);
 	}
